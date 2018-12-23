@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
+
 from PIL import Image
 import os
 import glob
 import numpy as np
 from sklearn import model_selection
 
-classes = ["nogi", "keya", "gana"]
+classes = ["gana", "keya", "nogi"]
 num_classes = len(classes)
 image_size = 75
 
@@ -33,4 +35,4 @@ Y = np.array(Y)
 X_train, X_test, Y_train, Y_test = model_selection.train_test_split(X, Y)
 xy = (X_train, X_test, Y_train, Y_test)
 
-np.save("images/sakamichi.npy", xy)
+np.save("./sakamichi.npy", xy)
